@@ -10,11 +10,6 @@
 const n1 = parseInt(prompt('Inserisci un numero'));
 const n2 = parseInt(prompt('Inserisci un altro numero'));
 
-// if(isNaN(n1)){
-//   alert('Inserisci un valore numerico');
-// }else if (isNaN(n2)){
-//   alert('Inserisci un valore numerico');
-// }
 
 const output = document.querySelector('#num-maggiore');
 console.log(output);
@@ -32,4 +27,10 @@ if(n1 > n2){
   nMaggiore = 'I numeri sono uguali'
 }
 
-output.innerHTML = `Il numero maggiore è: ${nMaggiore}`; 
+if(isNaN(n1) || (isNaN(n2))){
+  output.innerHTML = 'Non hai inserito un numero...';
+}else{
+  output.innerHTML = `Il numero maggiore è: ${nMaggiore}`; 
+}
+
+
