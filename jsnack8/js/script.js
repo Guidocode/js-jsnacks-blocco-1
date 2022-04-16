@@ -8,53 +8,33 @@
 */
 
 
-const num = '2222';
+const output = document.querySelector('#message-output');
 
-console.log(num.length);
-
-
+const num = prompt('Inserisci un numero di 4 cifre');
 
 
+let somma = 0;
 
+for(i = 0; i < num.length; i++){
 
+  console.log(num.charAt(i));
 
-// const numLimit = (prompt('Inserisci un numero'));
+  somma += parseInt(num.charAt(i));
 
-
-/*
-const container = document.querySelector('.gb-container');
-
-console.log('numero inserito', numLimit);
-
-let cubo;
-
-for(i = 1; i <= numLimit; i++){
-  
-  // creo l'elemento da aggiungere
-  const boxElement = document.createElement('div');
-  // gli scrivo la classe
-  boxElement.className = 'num-box';
-  // aggiungo il contenuto 
-  boxElement.append(i, ' al cubo = ');
-  // stampo in console per vederlo
-  // console.log(boxElement);
-  console.log(i);
-
-  cubo = Math.pow(i, 3)
-  boxElement.append(cubo);
-  console.log('cubo',cubo);
-
-  container.append(boxElement);
 }
 
-const output = document.querySelector('#message-output');
+
+console.log('Hai inserito il numero', num, 'e ha', i, 'cifre');
+console.log('La somma è ', somma);
+
 const johnNash = document.querySelector('.john-nash');
 
-if(!isNaN(numLimit)){
-  output.innerHTML = 
-  `Stampo il cubo dei primi ${numLimit} numeri`;  
-}else{
+if(isNaN(num)){
   output.innerHTML = `Non hai inserito un numero...`;
   johnNash.classList.add('active');
+}else if (num.length === 4){
+  output.innerHTML = `Hai inserito il numero ${num} <br> La somma delle cifre è = ${somma}`;
+}else{
+  output.innerHTML = `Non hai inserito un numero di 4 cifre...`;
+  johnNash.classList.add('active');
 }
-*/
