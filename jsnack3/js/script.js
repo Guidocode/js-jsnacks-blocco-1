@@ -8,32 +8,48 @@
 
 const output = document.querySelector('#sum-numbers')
 
-const promptLimit = 5;
-let sumNumbers = 0;
-let userImput;
-
 // Fatto con for
+const promptLimit = 5;
+let sumNumFor = 0;
+
 for(i = 0; i < promptLimit; i++){
-  userImput = parseInt(prompt('Inserisci un numero'));
-  sumNumbers += userImput;
 
-  console.log(sumNumbers);
+  let userImput;
+  while(isNaN(userImput)){
+    userImput = parseInt(prompt(`Inserisci per ${5 - i} volte un numero`));
+  }
+  sumNumFor += userImput;
+
+  console.log('Numero inserito', userImput);
+  console.log('Somma parziale', sumNumFor);
+
 }
+console.log('Il totale è ', sumNumFor);
 
-/*
+
 // Fatto con while
-let i = 0;
+let sumNumWhile = 0;
+let counter = 0;
 
-while(i < promptLimit){
-  userImput = parseInt(prompt('Inserisci un numero'));
-  sumNumbers += userImput;
-  i++;
+while(counter < promptLimit){
+  
+  let userImput;
+  while(isNaN(userImput)){
+    userImput = parseInt(prompt(`Inserisci per ${5 - counter} volte un numero`));
+  }
+
+  counter++;
+  sumNumWhile += userImput;
+
+  console.log('Numero inserito', userImput);
+  console.log('Somma parziale', sumNumWhile);
 }
-*/
+console.log('Il totale è ', sumNumWhile);
+
 
 // IL PRIMO OUTPUT SI GENERA SOLO QUANDO L'ULTIMO VALORE NON E' UN NUMERO...
-if(isNaN(userImput)){
-  output.innerHTML = 'In almeno una richiesta non hai inserito un numero...';
-}else if(!isNaN(userImput)){
-  output.innerHTML = `La somma dei tuoi numeri è: ${sumNumbers}`; 
-}
+// if(isNaN(userImput)){
+//   output.innerHTML = 'In almeno una richiesta non hai inserito un numero...';
+// }else if(!isNaN(userImput)){
+//   output.innerHTML = `La somma dei tuoi numeri è: ${sumNumbers}`; 
+// }
